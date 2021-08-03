@@ -10,8 +10,8 @@ namespace Transport_point
             Console.SetWindowSize(200, 50);
 
             Point a = new Point(0, 0);
-            Point b = new Point(100, 0);
-            Point c = new Point(50, 20);
+            Point b = new Point(100, 30);
+            Point c = new Point(50, 30);
             Point purpose = GetStartPoint(a, b, c);
 
             Point result = GetResult(a, b, c, purpose);
@@ -97,14 +97,15 @@ namespace Transport_point
                         }
                         else if (newSum < sum)
                         {
-                            purpose = newPoint;
+                            purpose.x = newPoint.x;
+                            purpose.y = newPoint.y;
                             sum = newSum;
                             WritePoint(purpose, 'o');
                         }
                     }
                 }
 
-                if (counter == 50)
+                if (counter == 500)
                 {
                     break;
                 }
